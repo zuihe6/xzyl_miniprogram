@@ -1,0 +1,4 @@
+<view class="page center">
+  <t-empty description="该功能正在加紧开发中，敬请期待。" />
+  <t-button theme="primary" bindtap="goHome">返回首页</t-button>
+</view>

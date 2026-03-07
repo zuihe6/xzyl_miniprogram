@@ -1,0 +1,19 @@
+<view class="page">
+  <t-tabs value="all">
+    <t-tab-panel value="all" label="全部" />
+    <t-tab-panel value="pending" label="待付款" />
+    <t-tab-panel value="done" label="已完成" />
+  </t-tabs>
+  <view wx:for="{{orders}}" wx:key="no" class="order-card">
+    <view class="top">
+      <text>{{item.title}}</text>
+      <t-tag theme="{{item.status==='待付款'?'warning':'success'}}" variant="light">{{item.status}}</t-tag>
+    </view>
+    <view class="no">订单号：{{item.no}}</view>
+    <view class="amount">合计：¥{{item.amount}}</view>
+    <view class="btns">
+      <t-button size="small" variant="outline">删除订单</t-button>
+      <t-button size="small" theme="primary">查看详情</t-button>
+    </view>
+  </view>
+</view>

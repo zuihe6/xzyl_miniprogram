@@ -1,13 +1,27 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/login/login",
+    "pages/home/home",
+    "pages/car-list/car-list",
+    "pages/car-detail/car-detail",
+    "pages/car-order/car-order",
+    "pages/custom-tour/custom-tour",
+    "pages/group-tour/group-tour",
+    "pages/group-tour-detail/group-tour-detail",
+    "pages/not-open/not-open",
+    "pages/service/service",
+    "pages/myself/myself",
+    "pages/orders/orders"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarBackgroundColor": "#ffffff"
+    "navigationBarTitleText": "西藏野狼旅行社",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f5f6fa"
   },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
   "componentFramework": "glass-easel",
   "lazyCodeLoading": "requiredComponents"
 }

@@ -1,0 +1,18 @@
+<scroll-view class="page" scroll-y>
+  <view class="hero">
+    <view class="hero-sub">一站式服务 · 纯玩小团</view>
+    <view class="hero-title">开启属于你的西藏之旅</view>
+  </view>
+  <view wx:for="{{tours}}" wx:key="title" class="item">
+    <view class="img"></view>
+    <view class="info">
+      <view class="title">{{item.title}}</view>
+      <view class="sub">无购物，无自费，冬游西藏特惠价</view>
+      <view class="spot">{{item.spot}}</view>
+      <view class="bottom-row">
+        <text class="price">¥{{item.price}} 起</text>
+        <t-button size="small" theme="primary" bindtap="goDetail">点击购买</t-button>
+      </view>
+    </view>
+  </view>
+</scroll-view>
