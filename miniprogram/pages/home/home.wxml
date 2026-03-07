@@ -1,6 +1,10 @@
 <scroll-view class="page" scroll-y>
   <t-search placeholder="搜索热门路线、景点、目的地" />
-  <t-swiper class="banner" list="{{banners}}" autoplay="{{true}}" interval="3000" duration="500" navigation="{{dots}}" height="280rpx" />
+  <t-swiper autoplay="{{true}}" interval="3000" class="banner">
+    <t-swiper-item wx:for="{{banners}}" wx:key="text">
+      <view class="banner-item">{{item.text}}</view>
+    </t-swiper-item>
+  </t-swiper>
   <view class="tags">
     <t-tag wx:for="{{hotTags}}" wx:key="*this" theme="warning" variant="light">{{item}}</t-tag>
   </view>

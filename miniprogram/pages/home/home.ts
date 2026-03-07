@@ -1,11 +1,6 @@
 Page({
   data: {
-    banners: [
-      { value: 'https://tdesign.gtimg.com/mobile/demos/swiper1.png' },
-      { value: 'https://tdesign.gtimg.com/mobile/demos/swiper2.png' },
-      { value: 'https://tdesign.gtimg.com/mobile/demos/swiper3.png' },
-    ],
-    dots: { type: 'dots' },
+    banners: [{ text: '珠穆朗玛峰大本营' }, { text: '林芝桃花节' }, { text: '纳木错圣湖' }],
     hotTags: ['热门路线', '布达拉宫', '林芝桃花', '雅鲁藏布大峡谷'],
     modules: [
       { name: '旅游租车', icon: 'https://tdesign.gtimg.com/mobile/demos/avatar1.png', url: '/pages/car-list/car-list' },
