@@ -1,0 +1,5 @@
+.order-card { background: #fff; border-radius: 16rpx; padding: 18rpx; margin-top: 16rpx; }
+.top,.btns { display: flex; justify-content: space-between; align-items: center; }
+.no { color: #888; font-size: 24rpx; margin-top: 8rpx; }
+.amount { margin-top: 12rpx; font-weight: 700; color: #e34d59; }
+.btns { margin-top: 14rpx; justify-content: flex-end; gap: 12rpx; }

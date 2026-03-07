@@ -1,0 +1,9 @@
+.page { padding-bottom: 140rpx; }
+.banner { height: 280rpx; border-radius: 16rpx; overflow: hidden; }
+.banner-item { height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(120deg,#0d4a2e,#2f9260); color: #fff; font-weight: 600; }
+.tags { display: flex; gap: 12rpx; margin: 20rpx 0; flex-wrap: wrap; }
+.tour-card { background: #fff; border-radius: 16rpx; padding: 20rpx; margin-bottom: 16rpx; }
+.tour-name { font-weight: 600; }
+.tour-desc { color: #888; font-size: 24rpx; margin: 10rpx 0; }
+.price-row { display: flex; justify-content: space-between; align-items: center; }
+.price { color: #e34d59; font-weight: 700; }

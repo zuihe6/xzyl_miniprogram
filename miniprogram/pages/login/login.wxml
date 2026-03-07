@@ -1,0 +1,11 @@
+<view class="page login-page">
+  <view class="brand">西藏野狼旅行社</view>
+  <view class="slogan">您好，欢迎登录</view>
+  <t-input label="手机号" placeholder="请输入手机号" value="{{mobile}}" bindchange="onMobile" />
+  <t-input label="验证码" placeholder="请输入验证码" value="{{code}}" bindchange="onCode" />
+  <t-button theme="primary" size="large" block>授权手机号快捷登录</t-button>
+  <view class="protocol">
+    <t-checkbox checked="{{agree}}" bindchange="onAgree" />
+    <text>我已阅读并同意《用户协议》《隐私政策》</text>
+  </view>
+</view>

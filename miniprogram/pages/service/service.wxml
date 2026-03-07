@@ -1,0 +1,14 @@
+<view class="page chat-page">
+  <view class="bubble">您好！欢迎来到西藏野狼旅行社🏔️\n我是您的AI智能导游助手，可以帮您查询线路和报价、解答高原旅行问题。</view>
+  <view class="quick-row">
+    <t-button size="small" variant="outline">租车咨询</t-button>
+    <t-button size="small" variant="outline">参团游</t-button>
+    <t-button size="small" variant="outline">定制行程</t-button>
+  </view>
+  <view class="input-wrap"><t-input placeholder="请输入您的问题" /></view>
+</view>
+<t-tab-bar value="service" bindchange="onTabChange" fixed>
+  <t-tab-bar-item value="home" icon="home" />
+  <t-tab-bar-item value="service" icon="service" />
+  <t-tab-bar-item value="my" icon="user" />
+</t-tab-bar>

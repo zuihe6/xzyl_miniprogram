@@ -1,0 +1,4 @@
+.my-page { padding-bottom: 140rpx; }
+.profile { background: linear-gradient(135deg,#0d4a2e,#3a9464); border-radius: 16rpx; padding: 24rpx; color: #fff; display: flex; gap: 16rpx; align-items: center; margin-bottom: 16rpx; }
+.avatar { width: 96rpx; height: 96rpx; border-radius: 50%; background: rgba(255,255,255,.4); }
+.name { font-size: 32rpx; font-weight: 600; margin-bottom: 8rpx; }
