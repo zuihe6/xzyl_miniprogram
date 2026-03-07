@@ -1,28 +1,17 @@
-<!--index.wxml-->
-<scroll-view class="scrollarea" scroll-y type="list">
-  <view class="container">
-    <view class="userinfo">
-      <block wx:if="{{canIUseNicknameComp && !hasUserInfo}}">
-        <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
-          <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
-        </button>
-        <view class="nickname-wrapper">
-          <text class="nickname-label">昵称</text>
-          <input type="nickname" class="nickname-input" placeholder="请输入昵称" bind:change="onInputChange" />
-        </view>
-      </block>
-      <block wx:elif="{{!hasUserInfo}}">
-        <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
-        <view wx:else> 请使用2.10.4及以上版本基础库 </view>
-      </block>
-      <block wx:else>
-        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-      </block>
-    </view>
-    <view class="usermotto">
-      <text class="user-motto">{{motto}}</text>
-    </view>
-    <t-button theme="primary">按钮</t-button>
-  </view>
-</scroll-view>
+<view class="page">
+  <view class="section-title">西藏野狼旅行社 · 页面导航</view>
+  <t-cell-group>
+    <t-cell title="登录" note="login" arrow bindtap="go" data-url="/pages/login/login" />
+    <t-cell title="首页" note="home" arrow bindtap="go" data-url="/pages/home/home" />
+    <t-cell title="旅游租车" note="car-list" arrow bindtap="go" data-url="/pages/car-list/car-list" />
+    <t-cell title="车辆详情" note="car-detail" arrow bindtap="go" data-url="/pages/car-detail/car-detail" />
+    <t-cell title="租车下单" note="car-order" arrow bindtap="go" data-url="/pages/car-order/car-order" />
+    <t-cell title="定制游" note="custom-tour" arrow bindtap="go" data-url="/pages/custom-tour/custom-tour" />
+    <t-cell title="参团游" note="group-tour" arrow bindtap="go" data-url="/pages/group-tour/group-tour" />
+    <t-cell title="参团游详情" note="group-tour-detail" arrow bindtap="go" data-url="/pages/group-tour-detail/group-tour-detail" />
+    <t-cell title="客服" note="service" arrow bindtap="go" data-url="/pages/service/service" />
+    <t-cell title="我的" note="myself" arrow bindtap="go" data-url="/pages/myself/myself" />
+    <t-cell title="订单" note="orders" arrow bindtap="go" data-url="/pages/orders/orders" />
+    <t-cell title="未开放提示" note="not-open" arrow bindtap="go" data-url="/pages/not-open/not-open" />
+  </t-cell-group>
+</view>

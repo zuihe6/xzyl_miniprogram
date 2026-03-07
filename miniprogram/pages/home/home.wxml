@@ -1,0 +1,31 @@
+<scroll-view class="page" scroll-y>
+  <t-search placeholder="搜索热门路线、景点、目的地" />
+  <t-swiper autoplay="{{true}}" interval="3000" class="banner">
+    <t-swiper-item wx:for="{{banners}}" wx:key="text">
+      <view class="banner-item">{{item.text}}</view>
+    </t-swiper-item>
+  </t-swiper>
+  <view class="tags">
+    <t-tag wx:for="{{hotTags}}" wx:key="*this" theme="warning" variant="light">{{item}}</t-tag>
+  </view>
+  <view class="section-title">功能服务</view>
+  <t-grid column="3" border>
+    <t-grid-item wx:for="{{modules}}" wx:key="name" text="{{item.name}}" image="{{item.icon}}" bindtap="openModule" data-url="{{item.url}}" />
+  </t-grid>
+
+  <view class="section-title">热门参团游</view>
+  <view wx:for="{{tours}}" wx:key="name" class="tour-card">
+    <view class="tour-name">{{item.name}}</view>
+    <view class="tour-desc">{{item.desc}}</view>
+    <view class="price-row">
+      <text class="price">¥{{item.price}} 起/人</text>
+      <t-button size="small" theme="primary" data-url="/pages/group-tour-detail/group-tour-detail" bindtap="open">查看</t-button>
+    </view>
+  </view>
+  <view class="bottom-gap"></view>
+</scroll-view>
+<t-tab-bar value="home" bindchange="onTabChange" fixed>
+  <t-tab-bar-item value="home" icon="home" />
+  <t-tab-bar-item value="service" icon="service" />
+  <t-tab-bar-item value="my" icon="user" />
+</t-tab-bar>

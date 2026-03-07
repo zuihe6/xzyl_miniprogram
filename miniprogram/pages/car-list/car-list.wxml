@@ -1,0 +1,22 @@
+<view class="page">
+  <t-tabs value="0">
+    <t-tab-panel label="5座越野" value="0" />
+    <t-tab-panel label="5座轿车" value="1" />
+    <t-tab-panel label="7-9座商务" value="2" />
+  </t-tabs>
+  <t-dropdown-menu>
+    <t-dropdown-item label="用车城市" options="{{cityOptions}}" />
+  </t-dropdown-menu>
+  <view wx:for="{{cars}}" wx:key="name" class="item">
+    <view class="thumb"></view>
+    <view class="info">
+      <view class="title">{{item.name}}</view>
+      <view class="desc">{{item.desc}}</view>
+      <t-tag theme="warning" variant="light">{{item.brand}}</t-tag>
+      <view class="actions">
+        <text class="price">¥{{item.price}} 元起</text>
+        <t-button size="small" theme="primary" bindtap="detail" data-url="/pages/car-detail/car-detail">查看</t-button>
+      </view>
+    </view>
+  </view>
+</view>

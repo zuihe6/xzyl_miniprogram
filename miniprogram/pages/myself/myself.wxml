@@ -1,0 +1,20 @@
+<view class="page my-page">
+  <view class="profile">
+    <view class="avatar"></view>
+    <view>
+      <view class="name">野狼旅行用户</view>
+      <t-tag theme="primary" variant="light">普通会员</t-tag>
+    </view>
+  </view>
+  <t-cell-group>
+    <t-cell title="我的订单" arrow bindtap="goOrders" />
+    <t-cell title="我的收藏" arrow />
+    <t-cell title="常用联系人" arrow />
+    <t-cell title="设置" arrow />
+  </t-cell-group>
+</view>
+<t-tab-bar value="my" bindchange="onTabChange" fixed>
+  <t-tab-bar-item value="home" icon="home" />
+  <t-tab-bar-item value="service" icon="service" />
+  <t-tab-bar-item value="my" icon="user" />
+</t-tab-bar>
