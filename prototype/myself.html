@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390px, initial-scale=1.0">
+<title>我的</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans SC',sans-serif;background:#f5f5f5;color:#333;font-size:14px}
+  .status-bar{height:44px;background:#1a6b3a;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:12px;font-weight:600;color:#fff}
+  .profile-header{background:linear-gradient(160deg,#0d4a2e 0%,#1a6b3a 70%,#2d9b5a 100%);padding:20px 16px 24px}
+  .profile-row{display:flex;align-items:center;gap:14px}
+  .avatar{width:60px;height:60px;border-radius:50%;background:rgba(255,255,255,0.2);border:2px solid rgba(255,255,255,0.5);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+  .profile-info{flex:1}
+  .username{font-size:17px;font-weight:700;color:#fff;margin-bottom:3px}
+  .user-level{background:rgba(255,215,0,0.2);color:#ffd700;font-size:11px;padding:2px 8px;border-radius:10px;border:1px solid rgba(255,215,0,0.4);display:inline-block}
+  .setting-btn{width:32px;height:32px;background:rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:#fff}
+  .order-card{background:#fff;margin:0 12px;margin-top:-14px;border-radius:12px;padding:14px 16px;box-shadow:0 2px 12px rgba(0,0,0,0.08)}
+  .order-title{font-size:14px;font-weight:600;color:#222;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between}
+  .see-all{font-size:12px;color:#999;font-weight:400}
+  .order-tabs{display:grid;grid-template-columns:repeat(4,1fr)}
+  .order-tab{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer}
+  .order-tab-icon{font-size:22px;position:relative}
+  .order-tab-label{font-size:11px;color:#666}
+  .badge{position:absolute;top:-4px;right:-6px;background:#ff4d4f;color:#fff;font-size:9px;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700}
+  .section-card{background:#fff;margin:10px 12px;border-radius:12px;overflow:hidden}
+  .menu-item{display:flex;align-items:center;padding:14px 16px;border-bottom:1px solid #f5f5f5;cursor:pointer}
+  .menu-item:last-child{border-bottom:none}
+  .menu-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;margin-right:12px}
+  .mi-orange{background:#fff3e0}
+  .mi-blue{background:#e3f2fd}
+  .mi-purple{background:#f3e5f5}
+  .mi-green{background:#e8f5e9}
+  .menu-text{flex:1;font-size:14px;color:#333}
+  .menu-sub{font-size:11px;color:#aaa;margin-top:1px}
+  .menu-arrow{color:#ccc;font-size:16px}
+  .scroll-content{height:calc(100vh - 44px - 83px);overflow-y:auto;padding-bottom:10px}
+  .tab-bar{position:fixed;bottom:0;left:0;right:0;height:83px;background:#fff;border-top:1px solid #eee;display:flex;align-items:flex-start;padding-top:10px}
+  .tab-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
+  .tab-label{font-size:10px;color:#999}
+</style>
+</head>
+<body>
+<div class="status-bar"><span>9:41</span><span>⚡ 📶</span></div>
+
+<div class="scroll-content">
+  <div class="profile-header">
+    <div class="profile-row">
+      <div class="avatar">😊</div>
+      <div class="profile-info">
+        <div class="username">旅行者小明</div>
+        <div class="user-level">✨ 黄金会员</div>
+      </div>
+      <div class="setting-btn">⚙️</div>
+    </div>
+  </div>
+
+  <div class="order-card">
+    <div class="order-title">
+      <span>📦 我的订单</span>
+      <span class="see-all">全部订单 ›</span>
+    </div>
+    <div class="order-tabs">
+      <div class="order-tab">
+        <div class="order-tab-icon">💰<div class="badge">2</div></div>
+        <div class="order-tab-label">待付款</div>
+      </div>
+      <div class="order-tab">
+        <div class="order-tab-icon">🎫</div>
+        <div class="order-tab-label">待使用</div>
+      </div>
+      <div class="order-tab">
+        <div class="order-tab-icon">🔄</div>
+        <div class="order-tab-label">退款售后</div>
+      </div>
+      <div class="order-tab">
+        <div class="order-tab-icon">📋</div>
+        <div class="order-tab-label">全部订单</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card" style="margin-top:14px">
+    <div class="menu-item">
+      <div class="menu-icon mi-orange">❤️</div>
+      <div style="flex:1">
+        <div class="menu-text">我的收藏</div>
+        <div class="menu-sub">已收藏 3 个线路</div>
+      </div>
+      <div class="menu-arrow">›</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-icon mi-blue">🎁</div>
+      <div style="flex:1">
+        <div class="menu-text">优惠券</div>
+        <div class="menu-sub">3张可用</div>
+      </div>
+      <div class="menu-arrow">›</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-icon mi-purple">👥</div>
+      <div style="flex:1">
+        <div class="menu-text">常用旅客</div>
+        <div class="menu-sub">管理常用出行人信息</div>
+      </div>
+      <div class="menu-arrow">›</div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <div class="menu-item">
+      <div class="menu-icon mi-green">📞</div>
+      <div style="flex:1"><div class="menu-text">联系我们</div></div>
+      <div class="menu-arrow">›</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-icon" style="background:#fce4ec">⭐</div>
+      <div style="flex:1"><div class="menu-text">评价与反馈</div></div>
+      <div class="menu-arrow">›</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-icon" style="background:#e0f7fa">🛡️</div>
+      <div style="flex:1"><div class="menu-text">政策中心</div></div>
+      <div class="menu-arrow">›</div>
+    </div>
+    <div class="menu-item">
+      <div class="menu-icon" style="background:#f5f5f5">ℹ️</div>
+      <div style="flex:1"><div class="menu-text">关于我们</div></div>
+      <div class="menu-arrow">›</div>
+    </div>
+  </div>
+
+  <div style="height:10px"></div>
+</div>
+
+<div class="tab-bar">
+  <div class="tab-item">
+    <div style="font-size:22px">🏠</div>
+    <div class="tab-label">首页</div>
+  </div>
+  <div class="tab-item">
+    <div style="font-size:22px">💬</div>
+    <div class="tab-label">客服</div>
+  </div>
+  <div class="tab-item">
+    <div style="font-size:22px">👤</div>
+    <div class="tab-label" style="color:#1a6b3a;font-weight:600">我的</div>
+  </div>
+</div>
+</body>
+</html>

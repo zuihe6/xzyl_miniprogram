@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390px, initial-scale=1.0">
+<title>旅游租车</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans SC',sans-serif;background:#f5f5f5;color:#333;font-size:14px}
+  .status-bar{height:44px;background:#1a6b3a;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:12px;font-weight:600;color:#fff}
+  .nav-bar{height:44px;background:#1a6b3a;display:flex;align-items:center;padding:0 16px;gap:12px}
+  .nav-back{color:#fff;font-size:18px}
+  .nav-title{color:#fff;font-size:16px;font-weight:600;flex:1;text-align:center}
+  .nav-right{width:24px}
+  .type-tabs{background:#fff;display:flex;overflow-x:auto;border-bottom:1px solid #eee}
+  .type-tabs::-webkit-scrollbar{display:none}
+  .type-tab{padding:12px 16px;white-space:nowrap;font-size:13px;color:#666;position:relative;flex-shrink:0}
+  .type-tab.active{color:#1a6b3a;font-weight:600}
+  .type-tab.active::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:20px;height:2px;background:#1a6b3a;border-radius:1px}
+  .city-bar{background:#fff;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #eee}
+  .city-label{font-size:13px;color:#666}
+  .city-select{flex:1;height:32px;border:1px solid #e0e0e0;border-radius:6px;padding:0 10px;font-size:13px;color:#333;background:#fafafa;appearance:none;-webkit-appearance:none}
+  .city-arrow{margin-left:-24px;color:#999;font-size:12px;pointer-events:none}
+  .scroll-content{height:calc(100vh - 44px - 44px - 48px - 48px);overflow-y:auto}
+  .car-card{background:#fff;margin:10px 12px;border-radius:10px;padding:12px;display:flex;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,0.07)}
+  .car-img{width:100px;height:75px;border-radius:8px;background:linear-gradient(135deg,#1a4a6b,#2d7ab5);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0}
+  .car-info{flex:1;min-width:0}
+  .car-row1{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:4px}
+  .car-name{font-size:14px;font-weight:600;color:#222;line-height:1.4}
+  .fav-btn{font-size:18px;flex-shrink:0;margin-left:6px}
+  .car-row2{font-size:12px;color:#666;margin-bottom:5px;line-height:1.5}
+  .car-row3{margin-bottom:5px}
+  .brand-tag{display:inline-block;background:#fff8e1;color:#f59e0b;font-size:11px;padding:2px 8px;border-radius:4px;border:1px solid #fde68a;font-weight:500}
+  .car-price{font-size:15px;font-weight:700;color:#ff4d4f}
+  .car-price span{font-size:11px;color:#999;font-weight:400}
+</style>
+</head>
+<body>
+<div class="status-bar"><span>9:41</span><span>⚡ 📶</span></div>
+<div class="nav-bar">
+  <div class="nav-back">‹</div>
+  <div class="nav-title">旅游租车</div>
+  <div class="nav-right"></div>
+</div>
+
+<div class="type-tabs">
+  <div class="type-tab active">全部车型</div>
+  <div class="type-tab">5座越野</div>
+  <div class="type-tab">5座轿车</div>
+  <div class="type-tab">7-9座商务</div>
+  <div class="type-tab">豪华越野</div>
+</div>
+
+<div class="city-bar">
+  <div class="city-label">📍 用车城市：</div>
+  <select class="city-select">
+    <option>拉萨</option>
+    <option>林芝</option>
+    <option>阿里</option>
+    <option>日喀则</option>
+    <option>山南</option>
+    <option>那曲</option>
+    <option>波密</option>
+    <option>昌都</option>
+  </select>
+  <div class="city-arrow">▼</div>
+</div>
+
+<div class="scroll-content">
+  <div class="car-card">
+    <div class="car-img">🚙</div>
+    <div class="car-info">
+      <div class="car-row1">
+        <div class="car-name">丰田普拉多<br>5座越野</div>
+        <div class="fav-btn">🤍</div>
+      </div>
+      <div class="car-row2">高原专属越野，舒适宽敞，适合长途</div>
+      <div class="car-row3"><span class="brand-tag">Toyota 丰田</span></div>
+      <div class="car-price">¥880 <span>元起/天</span></div>
+    </div>
+  </div>
+
+  <div class="car-card">
+    <div class="car-img" style="background:linear-gradient(135deg,#2a4a1a,#4a8a2a)">🚗</div>
+    <div class="car-info">
+      <div class="car-row1">
+        <div class="car-name">荣威 RX5<br>5座轿车</div>
+        <div class="fav-btn">❤️</div>
+      </div>
+      <div class="car-row2">经济实惠，城市代步首选，节油省心</div>
+      <div class="car-row3"><span class="brand-tag">Roewe 荣威</span></div>
+      <div class="car-price">¥380 <span>元起/天</span></div>
+    </div>
+  </div>
+
+  <div class="car-card">
+    <div class="car-img" style="background:linear-gradient(135deg,#4a1a6b,#8a2db5)">🚐</div>
+    <div class="car-info">
+      <div class="car-row1">
+        <div class="car-name">别克 GL8<br>7-9座商务</div>
+        <div class="fav-btn">🤍</div>
+      </div>
+      <div class="car-row2">豪华商务，多人出行，宽敞舒适</div>
+      <div class="car-row3"><span class="brand-tag">Buick 别克</span></div>
+      <div class="car-price">¥1200 <span>元起/天</span></div>
+    </div>
+  </div>
+
+  <div class="car-card">
+    <div class="car-img" style="background:linear-gradient(135deg,#6b3a1a,#b56b2d)">🏎️</div>
+    <div class="car-info">
+      <div class="car-row1">
+        <div class="car-name">Land Cruiser 4500<br>5座豪华越野</div>
+        <div class="fav-btn">🤍</div>
+      </div>
+      <div class="car-row2">高端越野，强劲动力，翻山越岭无压力</div>
+      <div class="car-row3"><span class="brand-tag">Toyota 丰田</span></div>
+      <div class="car-price">¥1480 <span>元起/天</span></div>
+    </div>
+  </div>
+
+  <div style="height:20px"></div>
+</div>
+</body>
+</html>

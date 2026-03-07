@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390px, initial-scale=1.0">
+<title>定制游</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans SC',sans-serif;background:#f5f5f5;color:#333;font-size:14px}
+  .status-bar{height:44px;background:#1a6b3a;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:12px;font-weight:600;color:#fff}
+  .nav-bar{height:44px;background:#1a6b3a;display:flex;align-items:center;padding:0 16px;gap:12px}
+  .nav-back{color:#fff;font-size:18px}
+  .nav-title{color:#fff;font-size:16px;font-weight:600;flex:1;text-align:center}
+  .scroll-content{height:calc(100vh - 88px);overflow-y:auto;padding-bottom:20px}
+  .section-card{background:#fff;margin:10px 12px;border-radius:12px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,0.06)}
+  .section-header{padding:14px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #f5f5f5}
+  .section-num{font-size:18px;font-weight:800;color:#1a6b3a}
+  .section-name{font-size:15px;font-weight:700;color:#222}
+  .form-row{padding:12px 16px;border-bottom:1px solid #f5f5f5}
+  .form-row:last-child{border-bottom:none}
+  .row-label{font-size:12px;color:#888;margin-bottom:6px}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .input-box{border:1px solid #e8e8e8;border-radius:8px;padding:10px 12px;font-size:13px;color:#333;width:100%;background:#fafafa;outline:none}
+  .input-box::placeholder{color:#bbb}
+  .date-box{border:1px solid #e8e8e8;border-radius:8px;padding:10px 12px;font-size:13px;color:#999;background:#fafafa;display:flex;align-items:center;justify-content:space-between;cursor:pointer}
+  .stepper{display:flex;align-items:center;gap:12px}
+  .stepper-label{flex:1;font-size:13px;color:#333}
+  .stepper-ctrl{display:flex;align-items:center;gap:12px}
+  .step-btn{width:28px;height:28px;border:1px solid #ddd;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:#666;background:#fff;cursor:pointer}
+  .step-btn.active-btn{border-color:#1a6b3a;color:#1a6b3a}
+  .step-num{font-size:16px;font-weight:600;min-width:20px;text-align:center}
+  .chip-group{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{padding:6px 14px;border-radius:20px;font-size:12px;border:1px solid #e0e0e0;color:#666;cursor:pointer;background:#fff}
+  .chip.active{border-color:#1a6b3a;color:#1a6b3a;background:#f0faf4}
+  .textarea-box{width:100%;border:1px solid #e8e8e8;border-radius:8px;padding:10px 12px;font-size:13px;color:#333;background:#fafafa;outline:none;resize:none;min-height:70px}
+  .submit-btn{display:block;width:calc(100% - 24px);margin:16px 12px;padding:14px;background:linear-gradient(135deg,#1a6b3a,#2d9b5a);color:#fff;border-radius:12px;font-size:15px;font-weight:700;border:none;cursor:pointer;text-align:center;letter-spacing:1px}
+</style>
+</head>
+<body>
+<div class="status-bar"><span>9:41</span><span>⚡ 📶</span></div>
+<div class="nav-bar">
+  <div class="nav-back">‹</div>
+  <div class="nav-title">定制游</div>
+  <div style="width:24px"></div>
+</div>
+
+<div class="scroll-content">
+  <!-- Part 1 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-num">01</div>
+      <div class="section-name">基本信息</div>
+    </div>
+    <div class="form-row">
+      <div class="row-label">出发地 / 目的地</div>
+      <div class="two-col">
+        <input class="input-box" placeholder="出发地" type="text">
+        <input class="input-box" placeholder="目的地" type="text">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="row-label">出发日期</div>
+      <div class="two-col">
+        <div class="date-box"><span>开始日期</span><span>📅</span></div>
+        <div class="date-box"><span>结束日期</span><span>📅</span></div>
+      </div>
+      <div style="margin-top:6px;font-size:11px;color:#aaa">结束日期不能早于开始日期，不能晚于当前时间</div>
+    </div>
+    <div class="form-row">
+      <div class="row-label">游玩天数 / 人均预算（元）</div>
+      <div class="two-col">
+        <input class="input-box" placeholder="天数" type="number">
+        <input class="input-box" placeholder="预算（元）" type="number">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="row-label">成人 / 儿童人数</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div class="stepper">
+          <div class="stepper-label">成人（12岁以上）</div>
+          <div class="stepper-ctrl">
+            <div class="step-btn">−</div>
+            <div class="step-num">2</div>
+            <div class="step-btn active-btn">+</div>
+          </div>
+        </div>
+        <div class="stepper">
+          <div class="stepper-label">儿童（12岁以下）</div>
+          <div class="stepper-ctrl">
+            <div class="step-btn">−</div>
+            <div class="step-num">0</div>
+            <div class="step-btn active-btn">+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Part 2 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-num">02</div>
+      <div class="section-name">特色定制</div>
+    </div>
+    <div class="form-row">
+      <div class="row-label">酒店星级</div>
+      <div class="chip-group">
+        <div class="chip active">三星/舒适</div>
+        <div class="chip">四星/高档</div>
+        <div class="chip">五星/豪华</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="row-label">住宿类型</div>
+      <div class="chip-group">
+        <div class="chip">连锁酒店</div>
+        <div class="chip active">特色客栈</div>
+        <div class="chip">不限</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="row-label">用餐要求</div>
+      <div class="chip-group">
+        <div class="chip active">当地特色</div>
+        <div class="chip">定制师推荐</div>
+        <div class="chip">自理</div>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="row-label">其他需求</div>
+      <textarea class="textarea-box" placeholder="如有其他特殊需求，请在此填写，例如：需要高原反应药物、特殊饮食要求、行程偏好等"></textarea>
+    </div>
+  </div>
+
+  <!-- Part 3 -->
+  <div class="section-card">
+    <div class="section-header">
+      <div class="section-num">03</div>
+      <div class="section-name">联系人信息</div>
+    </div>
+    <div class="form-row">
+      <div class="row-label">联系人姓名 <span style="color:#ff4d4f">*</span></div>
+      <input class="input-box" placeholder="请输入姓名" type="text">
+    </div>
+    <div class="form-row">
+      <div class="row-label">手机号码 <span style="color:#ff4d4f">*</span></div>
+      <input class="input-box" placeholder="请输入手机号码" type="tel">
+    </div>
+  </div>
+
+  <button class="submit-btn">提交定制需求</button>
+</div>
+</body>
+</html>

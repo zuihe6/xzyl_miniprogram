@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390px, initial-scale=1.0">
+<title>参团游详情</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans SC',sans-serif;background:#f5f5f5;color:#333;font-size:14px}
+  .status-bar{height:44px;background:#1a6b3a;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:12px;font-weight:600;color:#fff}
+  .nav-bar{height:44px;background:#1a6b3a;display:flex;align-items:center;padding:0 16px;gap:12px}
+  .nav-back{color:#fff;font-size:18px}
+  .nav-title{color:#fff;font-size:16px;font-weight:600;flex:1;text-align:center}
+  .scroll-content{height:calc(100vh - 88px - 83px);overflow-y:auto}
+  .product-top{background:#fff;padding:12px;display:flex;gap:12px;margin-bottom:8px}
+  .product-img{width:100px;height:75px;border-radius:8px;background:linear-gradient(135deg,#0d4a2e,#2d9b6b);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:32px}
+  .product-meta{flex:1}
+  .product-name{font-size:14px;font-weight:700;color:#222;margin-bottom:5px;line-height:1.5}
+  .product-spots{font-size:12px;color:#888}
+  .date-section{background:#fff;padding:14px 16px;margin-bottom:8px}
+  .date-label{font-size:14px;font-weight:600;color:#222;margin-bottom:10px}
+  .date-row{display:flex;gap:6px;overflow-x:auto}
+  .date-row::-webkit-scrollbar{display:none}
+  .date-cell{flex-shrink:0;width:56px;border:1px solid #e0e0e0;border-radius:8px;padding:7px 4px;text-align:center;cursor:pointer;background:#fff}
+  .date-cell.active{border-color:#1a6b3a;background:#f0faf4}
+  .date-cell.more{border-style:dashed;color:#1a6b3a}
+  .date-week{font-size:10px;color:#888;margin-bottom:2px}
+  .date-num{font-size:13px;font-weight:600;color:#333;margin-bottom:2px}
+  .date-price{font-size:10px;color:#ff4d4f;font-weight:600}
+  .date-cell.active .date-week,.date-cell.active .date-num{color:#1a6b3a}
+  .qty-section{background:#fff;padding:14px 16px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between}
+  .qty-label{font-size:14px;font-weight:600;color:#222}
+  .qty-ctrl{display:flex;align-items:center;gap:12px}
+  .qty-btn{width:28px;height:28px;border:1px solid #ddd;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;color:#666;background:#fff}
+  .qty-btn.green{border-color:#1a6b3a;color:#1a6b3a}
+  .qty-num{font-size:16px;font-weight:600;min-width:20px;text-align:center}
+  .contact-section{background:#fff;padding:14px 16px;margin-bottom:8px}
+  .cs-title{font-size:14px;font-weight:600;color:#222;margin-bottom:10px}
+  .cs-item{padding:10px 0;border-bottom:1px solid #f5f5f5;display:flex;align-items:center}
+  .cs-item:last-child{border-bottom:none}
+  .cs-label{font-size:13px;color:#333;width:80px;flex-shrink:0}<br>
+  .required{color:#ff4d4f}
+  .cs-input{flex:1;border:none;outline:none;font-size:13px;color:#999;background:transparent}
+  .intro-section{background:#fff;padding:14px 16px;margin-bottom:8px}
+  .intro-title{font-size:14px;font-weight:600;color:#222;margin-bottom:10px}
+  .intro-item{display:flex;gap:8px;padding:6px 0;border-bottom:1px solid #f8f8f8}
+  .intro-item:last-child{border-bottom:none}
+  .intro-dot{width:6px;height:6px;border-radius:50%;background:#1a6b3a;margin-top:6px;flex-shrink:0}
+  .intro-text{font-size:12px;color:#555;line-height:1.7}
+  .bottom-bar{position:fixed;bottom:0;left:0;right:0;height:83px;background:#fff;border-top:1px solid #eee;padding:10px 16px 0;display:flex;align-items:center;gap:12px}
+  .total-info{flex:1}
+  .total-price{font-size:20px;font-weight:800;color:#ff4d4f}
+  .detail-link{font-size:12px;color:#1a6b3a;margin-left:6px;text-decoration:underline}
+  .buy-btn{background:linear-gradient(135deg,#1a6b3a,#2d9b5a);color:#fff;padding:12px 28px;border-radius:25px;font-size:14px;font-weight:600;border:none;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="status-bar"><span>9:41</span><span>⚡ 📶</span></div>
+<div class="nav-bar">
+  <div class="nav-back">‹</div>
+  <div class="nav-title">线路详情</div>
+  <div style="width:24px"></div>
+</div>
+
+<div class="scroll-content">
+  <div class="product-top">
+    <div class="product-img">🌊</div>
+    <div class="product-meta">
+      <div class="product-name">【直通车】雅鲁藏布大峡谷一日游（林芝出发）</div>
+      <div class="product-spots">🏔️ 南迦巴瓦峰 · 两江汇流 · 佛掌沙丘</div>
+    </div>
+  </div>
+
+  <div class="date-section">
+    <div class="date-label">📅 选择日期</div>
+    <div class="date-row">
+      <div class="date-cell active">
+        <div class="date-week">今天</div>
+        <div class="date-num">03-07</div>
+        <div class="date-price">¥680</div>
+      </div>
+      <div class="date-cell">
+        <div class="date-week">明天</div>
+        <div class="date-num">03-08</div>
+        <div class="date-price">¥680</div>
+      </div>
+      <div class="date-cell">
+        <div class="date-week">后天</div>
+        <div class="date-num">03-09</div>
+        <div class="date-price">¥720</div>
+      </div>
+      <div class="date-cell">
+        <div class="date-week">周日</div>
+        <div class="date-num">03-10</div>
+        <div class="date-price">¥750</div>
+      </div>
+      <div class="date-cell">
+        <div class="date-week">周一</div>
+        <div class="date-num">03-11</div>
+        <div class="date-price">¥680</div>
+      </div>
+      <div class="date-cell more">
+        <div class="date-week">📆</div>
+        <div class="date-num" style="font-size:10px;color:#1a6b3a">更多</div>
+        <div class="date-price" style="color:#1a6b3a">日期</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="qty-section">
+    <div class="qty-label">👥 选择数量</div>
+    <div class="qty-ctrl">
+      <div class="qty-btn">−</div>
+      <div class="qty-num">2</div>
+      <div class="qty-btn green">+</div>
+    </div>
+  </div>
+
+  <div class="contact-section">
+    <div class="cs-title">👤 联系人信息</div>
+    <div class="cs-item">
+      <div class="cs-label"><span class="required">*</span> 联系姓名</div>
+      <input class="cs-input" placeholder="请输入联系人姓名">
+    </div>
+    <div class="cs-item">
+      <div class="cs-label"><span class="required">*</span> 手机号码</div>
+      <input class="cs-input" placeholder="请输入手机号码" type="tel">
+    </div>
+  </div>
+
+  <div class="intro-section">
+    <div class="intro-title">📋 产品介绍</div>
+    <div class="intro-item"><div class="intro-dot"></div><div class="intro-text">全程无购物、无自费项目，纯玩行程，安心享受</div></div>
+    <div class="intro-item"><div class="intro-dot"></div><div class="intro-text">专业藏族导游陪同讲解，深入了解当地文化</div></div>
+    <div class="intro-item"><div class="intro-dot"></div><div class="intro-text">林芝出发，含专车接送服务，门票含在内</div></div>
+    <div class="intro-item"><div class="intro-dot"></div><div class="intro-text">建议提前1天预定，确保出行顺利</div></div>
+    <div class="intro-item"><div class="intro-dot"></div><div class="intro-text">高原地区，建议准备高原反应药物，注意保暖</div></div>
+  </div>
+</div>
+
+<div class="bottom-bar">
+  <div class="total-info">
+    <div style="font-size:11px;color:#999">合计</div>
+    <div style="display:flex;align-items:baseline">
+      <span class="total-price">¥1360</span>
+      <span style="font-size:11px;color:#999;margin-left:2px">元</span>
+      <span class="detail-link">明细</span>
+    </div>
+  </div>
+  <button class="buy-btn">立即购买</button>
+</div>
+</body>
+</html>

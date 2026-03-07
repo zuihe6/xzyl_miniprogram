@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390px, initial-scale=1.0">
+<title>车辆详情</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans SC',sans-serif;background:#f5f5f5;color:#333;font-size:14px}
+  .status-bar{height:44px;background:transparent;position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:12px;font-weight:600;color:#fff;z-index:10}
+  .nav-float{position:absolute;top:44px;left:0;right:0;height:44px;display:flex;align-items:center;padding:0 16px;z-index:10}
+  .nav-back-btn{width:32px;height:32px;background:rgba(0,0,0,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;backdrop-filter:blur(4px)}
+  .hero{height:240px;background:linear-gradient(160deg,#0d3a25 0%,#1a6b3a 50%,#2d9b5a 100%);position:relative;display:flex;align-items:center;justify-content:center;font-size:60px}
+  .car-body{padding:16px;background:#fff;margin-bottom:8px}
+  .car-title{font-size:18px;font-weight:700;color:#222;margin-bottom:8px}
+  .price-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+  .price-main{font-size:22px;font-weight:800;color:#ff4d4f}
+  .price-unit{font-size:13px;color:#999}
+  .brand-tag{background:#fff8e1;color:#f59e0b;font-size:12px;padding:3px 10px;border-radius:20px;border:1px solid #fde68a;font-weight:600}
+  .highlight-box{background:#fff8e1;border-radius:8px;padding:12px;margin:8px 0;border-left:3px solid #f5a623}
+  .highlight-title{font-size:12px;font-weight:700;color:#f5a623;margin-bottom:6px}
+  .highlight-text{font-size:12px;color:#555;line-height:1.7}
+  .section{background:#fff;margin-bottom:8px;padding:16px}
+  .section-title{font-size:15px;font-weight:700;color:#222;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+  .section-title::before{content:'';width:3px;height:16px;background:#1a6b3a;border-radius:2px}
+  .steps{display:flex;flex-direction:column;gap:0}
+  .step{display:flex;align-items:flex-start;gap:10px;padding:8px 0}
+  .step-dot{width:24px;height:24px;border-radius:50%;background:#1a6b3a;color:#fff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;flex-shrink:0;margin-top:1px}
+  .step-line{width:1px;background:#e0e0e0;height:100%;margin-left:11px}
+  .step-text{font-size:12px;color:#555;line-height:1.6;flex:1}
+  .arrow-row{text-align:center;color:#1a6b3a;font-size:16px;margin:-4px 0}
+  .fee-row{display:flex;align-items:flex-start;gap:8px;padding:6px 0;border-bottom:1px dashed #f0f0f0}
+  .fee-row:last-child{border-bottom:none}
+  .fee-dot{width:6px;height:6px;border-radius:50%;background:#1a6b3a;margin-top:6px;flex-shrink:0}
+  .fee-dot.red{background:#ff4d4f}
+  .fee-text{font-size:12px;color:#555;line-height:1.7}
+  .bottom-bar{position:fixed;bottom:0;left:0;right:0;height:83px;background:#fff;border-top:1px solid #eee;padding:10px 16px 0;display:flex;align-items:center;gap:12px}
+  .total-info{flex:1}
+  .total-label{font-size:11px;color:#999}
+  .total-price{font-size:20px;font-weight:800;color:#ff4d4f}
+  .buy-btn{background:linear-gradient(135deg,#1a6b3a,#2d9b5a);color:#fff;padding:12px 28px;border-radius:25px;font-size:14px;font-weight:600;border:none;cursor:pointer;white-space:nowrap}
+  .scroll-content{padding-bottom:83px;overflow-y:auto;height:100vh}
+</style>
+</head>
+<body>
+<div class="scroll-content">
+  <div style="position:relative">
+    <div class="status-bar"><span>9:41</span><span>⚡ 📶</span></div>
+    <div class="nav-float">
+      <div class="nav-back-btn">‹</div>
+    </div>
+    <div class="hero">🚙</div>
+  </div>
+
+  <div class="car-body">
+    <div class="car-title">丰田普拉多 5座越野</div>
+    <div class="price-row">
+      <div class="price-main">¥880</div>
+      <div class="price-unit">元起/天</div>
+      <div class="brand-tag">Toyota 丰田</div>
+    </div>
+    <div class="highlight-box">
+      <div class="highlight-title">✨ 推荐理由</div>
+      <div class="highlight-text">高原专属越野车型，四驱强劲动力，底盘高通过性强，适合西藏复杂山路<br>· 空调完备 · 安全气囊 · 超大行李空间</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">服务流程</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-dot">1</div>
+        <div class="step-text"><strong>提交订单</strong>：填写用车信息，确认需求</div>
+      </div>
+      <div class="arrow-row">↓</div>
+      <div class="step">
+        <div class="step-dot">2</div>
+        <div class="step-text"><strong>确认订单</strong>：客服主动联系沟通，形成最终方案</div>
+      </div>
+      <div class="arrow-row">↓</div>
+      <div class="step">
+        <div class="step-dot">3</div>
+        <div class="step-text"><strong>支付订单</strong>：付款成功后确认接单</div>
+      </div>
+      <div class="arrow-row">↓</div>
+      <div class="step">
+        <div class="step-dot">4</div>
+        <div class="step-text"><strong>安排司导</strong>：优先匹配专业司机导游</div>
+      </div>
+      <div class="arrow-row">↓</div>
+      <div class="step">
+        <div class="step-dot">5</div>
+        <div class="step-text"><strong>上门接驾</strong>：准时就位，全程陪同</div>
+      </div>
+      <div class="arrow-row">↓</div>
+      <div class="step">
+        <div class="step-dot">6</div>
+        <div class="step-text"><strong>开启行程</strong>：可灵活调整路线，贴心服务</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">费用包含</div>
+    <div class="fee-row"><div class="fee-dot"></div><div class="fee-text">车辆服务费；燃油/电费</div></div>
+    <div class="fee-row"><div class="fee-dot"></div><div class="fee-text">司导服务费</div></div>
+    <div class="fee-row"><div class="fee-dot"></div><div class="fee-text">司导小费</div></div>
+    <div class="fee-row"><div class="fee-dot"></div><div class="fee-text">停车费、高速费、路桥费</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">费用不含</div>
+    <div class="fee-row"><div class="fee-dot red"></div><div class="fee-text">司导餐食和住宿补助</div></div>
+    <div class="fee-row"><div class="fee-dot red"></div><div class="fee-text">超时长费：单日上限10小时，超时费用下单时请与销售确认</div></div>
+    <div class="fee-row"><div class="fee-dot red"></div><div class="fee-text">超公里费：单日上限200公里，超公里费用下单时请与销售确认</div></div>
+    <div class="fee-row"><div class="fee-dot red"></div><div class="fee-text">其他用车过程中产生额外的费用，请以实际产生为准，线下支付给司机的部分不接受开票</div></div>
+  </div>
+</div>
+
+<div class="bottom-bar">
+  <div class="total-info">
+    <div class="total-label">合计</div>
+    <div class="total-price">¥880 <span style="font-size:13px;font-weight:400;color:#999">起</span></div>
+  </div>
+  <button class="buy-btn">立即购买</button>
+</div>
+</body>
+</html>

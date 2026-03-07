@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390px, initial-scale=1.0">
+<title>登录</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans SC',sans-serif;background:linear-gradient(160deg,#0d3a25 0%,#1a6b3a 60%,#2d9b5a 100%);min-height:100vh;color:#333;font-size:14px;display:flex;flex-direction:column}
+  .status-bar{height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.8)}
+  .login-content{flex:1;display:flex;flex-direction:column;align-items:center;padding:20px 30px 40px}
+  .welcome-text{color:rgba(255,255,255,0.8);font-size:14px;margin-bottom:8px;letter-spacing:1px}
+  .brand-name{color:#fff;font-size:22px;font-weight:800;letter-spacing:2px;margin-bottom:30px;text-align:center;text-shadow:0 2px 8px rgba(0,0,0,0.2)}
+  .logo-circle{width:90px;height:90px;border-radius:22px;background:rgba(255,255,255,0.15);border:2px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:44px;margin-bottom:30px;backdrop-filter:blur(8px);box-shadow:0 8px 32px rgba(0,0,0,0.2)}
+  .divider{width:60px;height:1px;background:rgba(255,255,255,0.2);margin:10px 0 30px}
+  .login-card{background:rgba(255,255,255,0.12);backdrop-filter:blur(16px);border-radius:20px;padding:28px 24px;width:100%;border:1px solid rgba(255,255,255,0.2)}
+  .login-btn{width:100%;padding:14px;background:#fff;border-radius:12px;font-size:15px;font-weight:700;color:#1a6b3a;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 16px rgba(0,0,0,0.15)}
+  .login-hint{color:rgba(255,255,255,0.5);font-size:11px;text-align:center;margin-top:14px;line-height:1.6}
+  .agreement-row{display:flex;align-items:flex-start;gap:8px;margin-top:20px}
+  .checkbox{width:16px;height:16px;border-radius:4px;border:1.5px solid rgba(255,255,255,0.4);flex-shrink:0;margin-top:1px;cursor:pointer;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center}
+  .checkbox.checked{background:#fff;border-color:#fff}
+  .checkbox.checked::after{content:'✓';font-size:10px;color:#1a6b3a;font-weight:800}
+  .agreement-text{font-size:11px;color:rgba(255,255,255,0.55);line-height:1.7}
+  .agreement-link{color:rgba(255,255,255,0.85);text-decoration:underline;cursor:pointer}
+  .mountain-deco{position:fixed;bottom:0;left:0;right:0;height:120px;opacity:0.08;pointer-events:none;font-size:80px;display:flex;justify-content:center;align-items:flex-end;padding-bottom:10px;filter:blur(1px)}
+</style>
+</head>
+<body>
+<div class="status-bar"><span>9:41</span><span>⚡ 📶</span></div>
+
+<div class="login-content">
+  <div class="welcome-text">您好，欢迎登录</div>
+  <div class="brand-name">西藏野狼旅行社</div>
+
+  <div class="logo-circle">🐺</div>
+  <div class="divider"></div>
+
+  <div class="login-card">
+    <button class="login-btn">
+      <span>📱</span>
+      <span>授权手机号快捷登录</span>
+    </button>
+    <div class="login-hint">请完成手机号授权以继续使用<br>您的手机号将用于账号识别与安全保障</div>
+    <div class="agreement-row">
+      <div class="checkbox checked"></div>
+      <div class="agreement-text">
+        我已阅读并同意
+        <span class="agreement-link">《林芝新绎旅游开发有限公司会员服务条款》</span>
+        和
+        <span class="agreement-link">《个人信息保护政策》</span>
+        ，未注册手机号将自动注册
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mountain-deco">🏔️</div>
+</body>
+</html>

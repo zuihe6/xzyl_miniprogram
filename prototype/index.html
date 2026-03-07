@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>西藏野狼旅行社 · 小程序原型图</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1a6b3a;
+    --green-light: #2d9b5a;
+    --bg: #f0f2f0;
+    --card-shadow: 0 20px 60px rgba(0,0,0,0.18), 0 4px 16px rgba(0,0,0,0.1);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans SC', sans-serif;
+    background: var(--bg);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Header */
+  .site-header {
+    background: linear-gradient(135deg, #0d3a25 0%, #1a6b3a 60%, #2d9b5a 100%);
+    padding: 40px 60px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '🏔️';
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 120px;
+    opacity: 0.08;
+    pointer-events: none;
+  }
+  .header-left h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+  .header-left p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    letter-spacing: 1px;
+  }
+  .header-badge {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 8px 18px;
+    color: rgba(255,255,255,0.8);
+    font-size: 13px;
+    backdrop-filter: blur(8px);
+  }
+
+  /* Section groups */
+  .section-group {
+    padding: 40px 40px 0;
+  }
+  .section-group:last-child { padding-bottom: 60px; }
+  .group-title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #222;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .group-title::before {
+    content: '';
+    width: 4px;
+    height: 22px;
+    background: linear-gradient(135deg, var(--green), var(--green-light));
+    border-radius: 2px;
+    display: inline-block;
+  }
+  .group-desc {
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 28px;
+    margin-left: 14px;
+  }
+
+  /* Phones row */
+  .phones-row {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  /* iPhone 15 Pro frame */
+  .phone-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+  .phone-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+
+  .iphone-frame {
+    position: relative;
+    width: 260px;
+    /* iPhone 15 Pro: 393 x 852 logical → scale to 260 wide */
+    /* 260/393 = 0.661; 852*0.661 = 563 */
+    height: 563px;
+    border-radius: 44px;
+    background: #1c1c1e;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    border: 8px solid #1c1c1e;
+  }
+
+  /* Side buttons */
+  .iphone-frame::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 80px;
+    width: 3px;
+    height: 30px;
+    background: #3a3a3c;
+    border-radius: 2px 0 0 2px;
+    box-shadow: 0 40px 0 #3a3a3c, 0 80px 0 #3a3a3c;
+    z-index: 20;
+  }
+  .iphone-frame::after {
+    content: '';
+    position: absolute;
+    right: -10px;
+    top: 100px;
+    width: 3px;
+    height: 56px;
+    background: #3a3a3c;
+    border-radius: 0 2px 2px 0;
+    z-index: 20;
+  }
+
+  /* Dynamic Island */
+  .dynamic-island {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 26px;
+    background: #1c1c1e;
+    border-radius: 13px;
+    z-index: 30;
+  }
+
+  /* Screen */
+  .phone-screen {
+    position: absolute;
+    inset: 0;
+    border-radius: 36px;
+    overflow: hidden;
+    background: #fff;
+  }
+  .phone-screen iframe {
+    width: 390px;
+    height: 844px;
+    border: none;
+    transform: scale(0.6667);
+    transform-origin: top left;
+    pointer-events: none;
+    border-radius: 0;
+  }
+
+  /* Divider */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ddd 20%, #ddd 80%, transparent);
+    margin: 40px 40px 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .site-header { padding: 30px 24px; }
+    .section-group { padding: 30px 20px 0; }
+    .phones-row { gap: 20px; }
+    .section-divider { margin: 30px 20px 0; }
+  }
+
+  /* Subtle background texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(26,107,58,0.04) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 20%, rgba(45,155,90,0.04) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .section-group { position: relative; z-index: 1; }
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <div class="header-left">
+    <h1>🐺 西藏野狼旅行社</h1>
+    <p>微信小程序 · UI 原型设计稿 · v1.0</p>
+  </div>
+  <div class="header-badge">📱 iPhone 15 Pro 尺寸规格</div>
+</div>
+
+<!-- Group 1: Tab 主页面 -->
+<div class="section-group">
+  <div class="group-title">核心 Tab 页面</div>
+  <div class="group-desc">底部导航栏三个主入口：首页 / 客服 / 我的</div>
+  <div class="phones-row">
+
+    <div class="phone-wrapper">
+      <div class="phone-label">首页</div>
+      <div class="iphone-frame">
+        <div class="dynamic-island"></div>
+        <div class="phone-screen">
+          <iframe src="home.html" scrolling="no" title="首页"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-wrapper">
+      <div class="phone-label">客服 · AI对话</div>
+      <div class="iphone-frame">
+        <div class="dynamic-island"></div>
+        <div class="phone-screen">
+          <iframe src="service.html" scrolling="no" title="客服"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-wrapper">
+      <div class="phone-label">我的（已登录）</div>
+      <div class="iphone-frame">
+        <div class="dynamic-island"></div>
+        <div class="phone-screen">
+          <iframe src="myself.html" scrolling="no" title="我的"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-wrapper">
+      <div class="phone-label">登录页</div>
+      <div class="iphone-frame">
+        <div class="dynamic-island"></div>
+        <div class="phone-screen">
+          <iframe src="login.html" scrolling="no" title="登录"></iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- Group 2: 旅游租车 -->
+<div class="section-group">
+  <div class="group-title">旅游租车</div>
+  <div class="group-desc">车型列表 → 车辆详情 → 提交订单 完整流程</div>
+  <div class="phones-row">
+
+    <div class="phone-wrapper">
+      <div class="phone-label">车型列表页</div>
+      <div class="iphone-frame">
+        <div class="dynamic-island"></div>
+        <div class="phone-screen">
+          <iframe src="car-list.html" scrolling="no" title="车型列表"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-wrapper">
+      <div class="phone-label">车辆详情页</div>
+      <div class="iphone-frame">
+        <div class="dynamic-island"></div>
+        <div class="phone-screen">
+          <iframe src="car-detail.html" scrolling="no" title="车辆详情"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-wrapper">
+      <div class="phone-label">提交订单页</div>
+      <div class="iphone-frame">
+        <div class="dynamic-island"></div>
+        <div class="phone-screen">
+          <iframe src="car-order.html" scrolling="no" title="提交订单"></iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- Group 3: 定制游 & 参团游 -->
+<div class="section-group">
+  <div class="group-title">定制游 & 参团游</div>
+  <div class="group-desc">个性定制行程表单 / 参团游列表 / 参团游购买详情</div>
+  <div class="phones-row">
+
+    <div class="phone-wrapper">
+      <div class="phone-label">定制游</div>
+      <div class="iphone-frame">
+        <div class="dynamic-island"></div>
+        <div class="phone-screen">
+          <iframe src="custom-tour.html" scrolling="no" title="定制游"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-wrapper">
+      <div class="phone-label">参团游列表</div>
+      <div class="iphone-frame">
+        <div class="dynamic-island"></div>
+        <div class="phone-screen">
+          <iframe src="group-tour.html" scrolling="no" title="参团游"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-wrapper">
+      <div class="phone-label">参团游详情</div>
+      <div class="iphone-frame">
+        <div class="dynamic-island"></div>
+        <div class="phone-screen">
+          <iframe src="group-tour-detail.html" scrolling="no" title="参团游详情"></iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section-divider"></div>
+
+<!-- Group 4: 订单 & 未开放 -->
+<div class="section-group">
+  <div class="group-title">订单系统 & 其他</div>
+  <div class="group-desc">我的订单列表 / 功能未开放占位页</div>
+  <div class="phones-row">
+
+    <div class="phone-wrapper">
+      <div class="phone-label">我的订单</div>
+      <div class="iphone-frame">
+        <div class="dynamic-island"></div>
+        <div class="phone-screen">
+          <iframe src="orders.html" scrolling="no" title="我的订单"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="phone-wrapper">
+      <div class="phone-label">功能未开放</div>
+      <div class="iphone-frame">
+        <div class="dynamic-island"></div>
+        <div class="phone-screen">
+          <iframe src="not-open.html" scrolling="no" title="功能未开放"></iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

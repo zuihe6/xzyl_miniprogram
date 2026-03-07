@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=390px, initial-scale=1.0">
+<title>参团游</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Noto Sans SC',sans-serif;background:#f5f5f5;color:#333;font-size:14px;overflow-x:hidden}
+  .status-bar{height:44px;background:transparent;position:absolute;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:0 16px;font-size:12px;font-weight:600;color:#fff;z-index:10}
+  .hero-section{height:220px;background:linear-gradient(160deg,#0d3a25 0%,#1a6b3a 60%,#2d9b5a 100%);position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 20px}
+  .hero-tags{display:flex;gap:12px;margin-bottom:12px}
+  .hero-tag{background:rgba(255,255,255,0.2);color:#fff;padding:4px 14px;border-radius:20px;font-size:12px;backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,0.3)}
+  .hero-title{font-size:22px;font-weight:800;color:#fff;letter-spacing:2px;margin-bottom:4px}
+  .hero-en{font-size:11px;color:rgba(255,255,255,0.7);letter-spacing:3px;text-transform:uppercase}
+  .bg-section{height:140px;background:linear-gradient(180deg,#1a6b3a 0%,#0d4a2e 100%);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .bg-emoji{font-size:60px;opacity:0.3}
+  .tagline-section{background:#fff;padding:16px 20px;text-align:center;border-bottom:4px solid #f0faf4}
+  .tagline{font-size:15px;color:#1a6b3a;font-weight:600;letter-spacing:1px}
+  .section-sub{font-size:12px;color:#999;margin-top:4px}
+  .list-title{padding:14px 16px 8px;font-size:15px;font-weight:700;color:#222}
+  .tour-item{background:#fff;margin:0 12px 10px;border-radius:10px;padding:12px;display:flex;gap:12px;box-shadow:0 1px 6px rgba(0,0,0,0.07)}
+  .tour-thumb{width:90px;height:75px;border-radius:8px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px;position:relative;overflow:hidden}
+  .t1{background:linear-gradient(135deg,#0d4a2e,#2d9b6b)}
+  .t2{background:linear-gradient(135deg,#0d2a4a,#2d6bb5)}
+  .t3{background:linear-gradient(135deg,#4a1a0d,#b55a2d)}
+  .t4{background:linear-gradient(135deg,#2a0d4a,#6b2db5)}
+  .tour-tag-badge{position:absolute;top:5px;left:5px;background:rgba(255,140,0,0.9);color:#fff;font-size:9px;padding:1px 5px;border-radius:3px;font-weight:700}
+  .tour-right{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:space-between}
+  .tour-name{font-size:13px;font-weight:600;color:#222;line-height:1.5;margin-bottom:3px}
+  .tour-subtitle{font-size:11px;color:#f59e0b;margin-bottom:3px;font-weight:500}
+  .tour-spots{font-size:11px;color:#888;margin-bottom:6px;line-height:1.5}
+  .tour-bottom{display:flex;align-items:center;justify-content:space-between}
+  .tour-price{font-size:15px;font-weight:700;color:#ff4d4f}
+  .tour-price-unit{font-size:11px;color:#999;font-weight:400}
+  .buy-btn{background:linear-gradient(135deg,#1a6b3a,#2d9b5a);color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;border:none;cursor:pointer}
+  .scroll-content{overflow-y:auto;height:100vh}
+  .tab-bar{position:fixed;bottom:0;left:0;right:0;height:83px;background:#fff;border-top:1px solid #eee;display:flex;align-items:flex-start;padding-top:10px}
+  .tab-item{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
+  .tab-label{font-size:10px;color:#999}
+</style>
+</head>
+<body>
+<div class="scroll-content">
+  <div style="position:relative">
+    <div class="status-bar"><span>9:41</span><span>⚡ 📶</span></div>
+    <div class="hero-section">
+      <div class="hero-tags">
+        <div class="hero-tag">🌟 一站式服务</div>
+        <div class="hero-tag">🎒 纯玩小团</div>
+      </div>
+      <div class="hero-title">开启属于你的西藏之旅</div>
+      <div class="hero-en">Explore the Roof of the World</div>
+    </div>
+  </div>
+
+  <div class="bg-section">
+    <div class="bg-emoji">🏔️🌄🏯</div>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(26,107,58,0.4) 0%,rgba(13,74,46,0.8) 100%)"></div>
+    <div style="position:absolute;text-align:center;color:#fff">
+      <div style="font-size:16px;font-weight:700;letter-spacing:1px;text-shadow:0 2px 8px rgba(0,0,0,0.5)">壮美高原 · 震撼视野</div>
+    </div>
+  </div>
+
+  <div class="tagline-section">
+    <div class="tagline">🌸 享受安心出游，去邂逅桃花与美好</div>
+    <div class="section-sub">专业司导全程陪同 · 无购物 · 无自费</div>
+  </div>
+
+  <div class="list-title">🗺️ 热门线路</div>
+
+  <div class="tour-item">
+    <div class="tour-thumb t1">
+      <div class="tour-tag-badge">热卖</div>
+      🌊
+    </div>
+    <div class="tour-right">
+      <div class="tour-name">【直通车】雅鲁藏布大峡谷一日游（林芝出发）</div>
+      <div class="tour-subtitle">无购物，无自费，冬游西藏特惠价</div>
+      <div class="tour-spots">南迦巴瓦峰 · 两江汇流 · 佛掌沙丘</div>
+      <div class="tour-bottom">
+        <div class="tour-price">¥680 <span class="tour-price-unit">起/人</span></div>
+        <button class="buy-btn">点击购买</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tour-item">
+    <div class="tour-thumb t2">
+      <div class="tour-tag-badge">新品</div>
+      🏔️
+    </div>
+    <div class="tour-right">
+      <div class="tour-name">【精华游】拉萨布达拉宫·大昭寺三日游</div>
+      <div class="tour-subtitle">纯玩小团，专属司导，含住宿</div>
+      <div class="tour-spots">布达拉宫 · 大昭寺 · 八廓街 · 色拉寺</div>
+      <div class="tour-bottom">
+        <div class="tour-price">¥1280 <span class="tour-price-unit">起/人</span></div>
+        <button class="buy-btn">点击购买</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tour-item">
+    <div class="tour-thumb t3">
+      <div class="tour-tag-badge">特惠</div>
+      🌸
+    </div>
+    <div class="tour-right">
+      <div class="tour-name">【桃花节】林芝桃花盛放四日经典游</div>
+      <div class="tour-subtitle">赏花最佳时机，含往返交通</div>
+      <div class="tour-spots">林芝桃花节 · 鲁朗林海 · 巴松措</div>
+      <div class="tour-bottom">
+        <div class="tour-price">¥2380 <span class="tour-price-unit">起/人</span></div>
+        <button class="buy-btn">点击购买</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="tour-item">
+    <div class="tour-thumb t4">
+      <div class="tour-tag-badge">推荐</div>
+      🌊
+    </div>
+    <div class="tour-right">
+      <div class="tour-name">【圣湖游】纳木错·羊湖双湖两日游</div>
+      <div class="tour-subtitle">高原圣湖，震撼心灵之旅</div>
+      <div class="tour-spots">纳木错圣湖 · 羊卓雍措 · 扎基寺</div>
+      <div class="tour-bottom">
+        <div class="tour-price">¥1580 <span class="tour-price-unit">起/人</span></div>
+        <button class="buy-btn">点击购买</button>
+      </div>
+    </div>
+  </div>
+
+  <div style="height:100px"></div>
+</div>
+
+<div class="tab-bar">
+  <div class="tab-item">
+    <div style="font-size:22px">🏠</div>
+    <div class="tab-label">首页</div>
+  </div>
+  <div class="tab-item">
+    <div style="font-size:22px">💬</div>
+    <div class="tab-label">客服</div>
+  </div>
+  <div class="tab-item">
+    <div style="font-size:22px">👤</div>
+    <div class="tab-label">我的</div>
+  </div>
+</div>
+</body>
+</html>
