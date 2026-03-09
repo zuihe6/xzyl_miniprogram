@@ -6,13 +6,10 @@
     <view class="desc">享受安心出游，去邂逅桃花与美好</view>
   </view>
 
-  <view class="tour-card" wx:for="{{tours}}" wx:key="title" bindtap="goDetail">
-    <view class="tour-title">{{item.title}}</view>
-    <view class="tour-tip">{{item.tip}}</view>
-    <view class="spot">{{item.spot}}</view>
-    <view class="footer">
-      <view class="price">¥{{item.price}} 起/人</view>
+  <t-card wx:for="{{tours}}" wx:key="title" title="{{item.title}}" description="{{item.tip}}" note="¥{{item.price}} 起/人" bindtap="goDetail">
+    <view slot="content" class="spot">{{item.spot}}</view>
+    <view slot="footer" class="footer">
       <t-button size="small" theme="primary" bindtap="goDetail">点击购买</t-button>
     </view>
-  </view>
+  </t-card>
 </view>

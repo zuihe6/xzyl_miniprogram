@@ -1,9 +1,11 @@
 .list {
   margin-top: 20rpx;
 }
-.order-card{background:#fff;border-radius:16rpx;padding:20rpx;margin-bottom:16rpx;}
-.order-title{font-weight:600;margin-bottom:8rpx;}
-.order-no{color:#666;margin-bottom:10rpx;}
+
+.list t-card {
+  margin-bottom: 16rpx;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;

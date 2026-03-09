@@ -29,6 +29,7 @@
   color: #1a6b3a;
   font-size: 24rpx;
 }
-.tour-card{background:#fff;border-radius:16rpx;padding:20rpx;margin-bottom:16rpx;}
-.tour-name{font-weight:600;margin-bottom:8rpx;}
-.tour-tags{color:#666;margin-bottom:8rpx;}
+
+.tour-list t-card {
+  margin-bottom: 16rpx;
+}

@@ -14,8 +14,7 @@
   font-size: 36rpx;
   font-weight: 700;
 }
-.panel{background:#fff;border-radius:16rpx;padding:20rpx;margin-bottom:12rpx;}
-.panel-title{font-weight:600;margin-bottom:8rpx;}
+
 .price-row {
   margin: 16rpx 0 24rpx;
   display: flex;

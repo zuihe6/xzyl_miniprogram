@@ -6,10 +6,7 @@
     <t-tag theme="warning" variant="light">TOYOTA</t-tag>
   </view>
 
-  <view class="panel">
-    <view class="panel-title">推荐理由</view>
-    <view>高原动力强，空间舒适，司导经验丰富。</view>
-  </view>
+  <t-card title="推荐理由" description="高原动力强，空间舒适，司导经验丰富。" />
 
   <view class="section-title">产品说明 · 服务流程</view>
   <t-cell-group>

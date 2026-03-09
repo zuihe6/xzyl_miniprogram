@@ -18,7 +18,7 @@
 
   <view class="section-title">功能服务</view>
   <t-grid column="3" bordered="{{false}}">
-    <t-grid-item wx:for="{{modules}}" wx:key="title" text="{{item.title}}" icon="{{item.icon}}" bindtap="goModule" data-url="{{item.url}}" />
+    <t-grid-item wx:for="{{modules}}" wx:key="title" text="{{item.title}}" image="icon" icon="{{item.icon}}" bindtap="goModule" data-url="{{item.url}}" />
   </t-grid>
 
   <view class="section-head">
@@ -27,10 +27,6 @@
   </view>
 
   <view class="tour-list">
-    <view class="tour-card" wx:for="{{tours}}" wx:key="name">
-      <view class="tour-name">{{item.name}}</view>
-      <view class="tour-tags">{{item.tags}}</view>
-      <view class="price">¥{{item.price}} 起/人</view>
-    </view>
+    <t-card wx:for="{{tours}}" wx:key="name" title="{{item.name}}" description="{{item.tags}}" note="¥{{item.price}} 起/人" />
   </view>
 </view>

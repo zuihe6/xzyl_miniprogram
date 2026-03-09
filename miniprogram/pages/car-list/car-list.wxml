@@ -7,12 +7,10 @@
 
   <view class="city">用车城市：{{cityValue}}</view>
 
-  <view class="car-card" wx:for="{{cars}}" wx:key="id" bindtap="goDetail">
-    <view class="car-name">{{item.name}}</view>
-    <view class="car-desc">{{item.desc}}</view>
-    <view class="row">
+  <t-card wx:for="{{cars}}" wx:key="id" title="{{item.name}}" description="{{item.desc}}" note="¥{{item.price}} 元起" bindtap="goDetail">
+    <view slot="footer" class="row">
       <t-tag theme="warning" variant="light">{{item.brand}}</t-tag>
-      <view class="price">¥{{item.price}} 元起</view>
+      <t-button size="small">查看详情</t-button>
     </view>
-  </view>
+  </t-card>
 </view>

@@ -1,9 +1,6 @@
 <view class="page">
   <view class="chat-title">西藏野狼 · AI智能客服</view>
-  <view class="panel">
-    <view class="panel-title">AI导游助手</view>
-    <view class="panel-desc">您好！欢迎来到西藏野狼旅行社🏔️ 我可以帮您查询线路和报价、解答高原旅行问题、预订租车和行程。</view>
-  </view>
+  <t-card title="AI导游助手" description="您好！欢迎来到西藏野狼旅行社🏔️ 我可以帮您查询线路和报价、解答高原旅行问题、预订租车和行程。" />
 
   <view class="quick-row">
     <t-button size="small" variant="outline" bindtap="onQuickTap" data-text="租车咨询">🚗 租车咨询</t-button>

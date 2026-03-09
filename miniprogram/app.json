@@ -45,6 +45,7 @@
   "lazyCodeLoading": "requiredComponents",
   "usingComponents": {
     "t-button": "tdesign-miniprogram/button/button",
+    "t-card": "tdesign-miniprogram/card/card",
     "t-cell": "tdesign-miniprogram/cell/cell",
     "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
     "t-checkbox": "tdesign-miniprogram/checkbox/checkbox",

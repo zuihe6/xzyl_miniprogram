@@ -25,10 +25,17 @@
 .desc {
   margin-top: 20rpx;
 }
-.tour-card{background:#fff;border-radius:16rpx;padding:20rpx;margin-bottom:16rpx;}
-.tour-title{font-weight:600;margin-bottom:8rpx;}
-.tour-tip,.spot{color:#666;margin-bottom:8rpx;}
+
+.spot {
+  color: #666;
+  margin: 12rpx 0;
+}
+
 .footer {
   display: flex;
-  justify-content: space-between;align-items:center;
+  justify-content: flex-end;
+}
+
+t-card {
+  margin-bottom: 16rpx;
 }

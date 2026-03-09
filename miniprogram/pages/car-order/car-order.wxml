@@ -1,8 +1,5 @@
 <view class="page">
-  <view class="car-info">
-    <view class="car-name">丰田普拉多 5座越野</view>
-    <view class="car-sub">购买数量：1 · ¥980/天</view>
-  </view>
+  <t-card title="丰田普拉多 5座越野" description="购买数量：1" note="¥980/天" />
 
   <view class="section-title">填写信息</view>
   <t-input label="姓名" required placeholder="请输入姓名" />
