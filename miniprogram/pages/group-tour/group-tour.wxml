@@ -1,0 +1,18 @@
+<view class="page">
+  <view class="hero">
+    <view class="tag">一站式服务 · 纯玩小团</view>
+    <view class="hero-title">开启属于你的西藏之旅</view>
+    <view class="sub">Enjoy your Tibet trip with Wild Wolf Travel</view>
+    <view class="desc">享受安心出游，去邂逅桃花与美好</view>
+  </view>
+
+  <view class="tour-card" wx:for="{{tours}}" wx:key="title" bindtap="goDetail">
+    <view class="tour-title">{{item.title}}</view>
+    <view class="tour-tip">{{item.tip}}</view>
+    <view class="spot">{{item.spot}}</view>
+    <view class="footer">
+      <view class="price">¥{{item.price}} 起/人</view>
+      <t-button size="small" theme="primary" bindtap="goDetail">点击购买</t-button>
+    </view>
+  </view>
+</view>

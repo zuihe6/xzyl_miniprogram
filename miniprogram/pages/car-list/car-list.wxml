@@ -1,0 +1,18 @@
+<view class="page">
+  <t-tabs value="{{carTypeValue}}" bindchange="onTypeChange">
+    <t-tab-panel label="5座越野" value="0" />
+    <t-tab-panel label="5座轿车" value="1" />
+    <t-tab-panel label="7-9座商务" value="2" />
+  </t-tabs>
+
+  <view class="city">用车城市：{{cityValue}}</view>
+
+  <view class="car-card" wx:for="{{cars}}" wx:key="id" bindtap="goDetail">
+    <view class="car-name">{{item.name}}</view>
+    <view class="car-desc">{{item.desc}}</view>
+    <view class="row">
+      <t-tag theme="warning" variant="light">{{item.brand}}</t-tag>
+      <view class="price">¥{{item.price}} 元起</view>
+    </view>
+  </view>
+</view>

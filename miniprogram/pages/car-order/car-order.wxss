@@ -1,0 +1,24 @@
+.car-info{background:#fff;border-radius:16rpx;padding:20rpx;margin-bottom:16rpx;}
+.car-name{font-weight:600;margin-bottom:8rpx;}
+.car-sub{color:#666;}
+t-input,
+t-textarea {
+  margin-bottom: 16rpx;
+}
+
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  padding: 20rpx 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rpx solid #eee;
+}
+
+.detail {
+  color: #1a6b3a;
+}

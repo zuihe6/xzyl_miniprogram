@@ -1,0 +1,12 @@
+.city {
+  margin: 24rpx 0 16rpx;
+  color: #666;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+.car-card{background:#fff;border-radius:16rpx;padding:20rpx;margin-bottom:16rpx;}
+.car-name{font-weight:600;margin-bottom:8rpx;}
+.car-desc{color:#666;margin-bottom:12rpx;}

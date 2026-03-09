@@ -1,0 +1,33 @@
+.tour-header{background:#fff;border-radius:16rpx;padding:20rpx;}
+.tour-title{font-weight:600;margin-bottom:8rpx;}
+.tour-sub{color:#666;margin-bottom:8rpx;}
+.date-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rpx;
+}
+
+.counter-row {
+  margin-top: 24rpx;
+  padding: 20rpx 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid #eee;
+}
+.panel{background:#fff;border-radius:16rpx;padding:20rpx;color:#666;}
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  padding: 20rpx 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rpx solid #eee;
+}
+
+.detail {
+  color: #1a6b3a;
+}

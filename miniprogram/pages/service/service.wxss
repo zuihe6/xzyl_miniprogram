@@ -1,0 +1,14 @@
+.chat-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+.panel{background:#fff;border-radius:16rpx;padding:20rpx;}
+.panel-title{font-size:30rpx;font-weight:600;margin-bottom:8rpx;}
+.panel-desc{color:#666;line-height:1.6;}
+.quick-row {
+  display: flex;
+  gap: 12rpx;
+  margin: 20rpx 0;
+  flex-wrap: wrap;
+}

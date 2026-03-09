@@ -1,0 +1,24 @@
+<view class="page">
+  <view class="car-info">
+    <view class="car-name">丰田普拉多 5座越野</view>
+    <view class="car-sub">购买数量：1 · ¥980/天</view>
+  </view>
+
+  <view class="section-title">填写信息</view>
+  <t-input label="姓名" required placeholder="请输入姓名" />
+  <t-input label="手机号" required placeholder="请输入手机号" />
+  <t-input label="用车城市" required placeholder="请输入城市" />
+  <t-input label="接驳地址" required placeholder="请输入接驳地址" />
+  <t-input label="用车时间" required placeholder="请选择用车时间" />
+  <t-input label="用车天数" required placeholder="请输入天数" type="number" />
+  <t-input label="用车人数" required placeholder="请输入人数" type="number" />
+  <t-textarea label="其他需求" placeholder="可填写行李、路线、儿童座椅等" />
+</view>
+
+<view class="bottom-bar">
+  <view>
+    <text>合计：<text class="price">¥980 元</text></text>
+    <text class="detail" bindtap="showDetail"> 明细</text>
+  </view>
+  <t-button theme="primary" bindtap="submit">提交订单</t-button>
+</view>
