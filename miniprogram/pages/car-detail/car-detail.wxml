@@ -1,0 +1,38 @@
+<view class="page">
+  <view class="cover">🚙</view>
+  <view class="title">丰田普拉多 5座越野</view>
+  <view class="price-row">
+    <text class="price">¥980 元起</text>
+    <t-tag theme="warning" variant="light">TOYOTA</t-tag>
+  </view>
+
+  <t-card title="推荐理由" description="高原动力强，空间舒适，司导经验丰富。" />
+
+  <view class="section-title">产品说明 · 服务流程</view>
+  <t-cell-group>
+    <t-cell title="提交订单" description="填写用车信息，确认需求" />
+    <t-cell title="确认订单" description="客服主动联系沟通，形成最终方案" />
+    <t-cell title="支付订单" description="付款成功后确认接单" />
+    <t-cell title="安排司导" description="优先匹配专业司导" />
+    <t-cell title="上门接驾" description="准时就位，开启行程" />
+  </t-cell-group>
+
+  <view class="section-title">费用包含</view>
+  <t-cell-group>
+    <t-cell title="车辆服务费、燃油/电费" />
+    <t-cell title="司导服务费与小费" />
+    <t-cell title="停车费、高速费、路桥费" />
+  </t-cell-group>
+
+  <view class="section-title">费用不含</view>
+  <t-cell-group>
+    <t-cell title="司导餐食和住宿补助" />
+    <t-cell title="超时长费与超公里费" />
+    <t-cell title="其他额外费用（线下支付）" />
+  </t-cell-group>
+</view>
+
+<view class="bottom-bar">
+  <text>合计：<text class="price">¥980 起</text></text>
+  <t-button theme="primary" bindtap="goOrder">立即购买</t-button>
+</view>

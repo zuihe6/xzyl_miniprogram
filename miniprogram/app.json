@@ -1,13 +1,69 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/home/home",
+    "pages/service/service",
+    "pages/myself/myself",
+    "pages/login/login",
+    "pages/orders/orders",
+    "pages/not-open/not-open",
+    "pages/car-list/car-list",
+    "pages/car-detail/car-detail",
+    "pages/car-order/car-order",
+    "pages/custom-tour/custom-tour",
+    "pages/group-tour/group-tour",
+    "pages/group-tour-detail/group-tour-detail"
   ],
   "window": {
     "navigationBarTextStyle": "black",
-    "navigationBarTitleText": "Weixin",
-    "navigationBarBackgroundColor": "#ffffff"
+    "navigationBarTitleText": "西藏野狼旅行社",
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundColor": "#f5f6fa"
   },
+  "tabBar": {
+    "color": "#7d7d7d",
+    "selectedColor": "#1a6b3a",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "text": "客服"
+      },
+      {
+        "pagePath": "pages/myself/myself",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
   "componentFramework": "glass-easel",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+  "usingComponents": {
+    "t-button": "tdesign-miniprogram/button/button",
+    "t-card": "tdesign-miniprogram/card/card",
+    "t-cell": "tdesign-miniprogram/cell/cell",
+    "t-cell-group": "tdesign-miniprogram/cell-group/cell-group",
+    "t-checkbox": "tdesign-miniprogram/checkbox/checkbox",
+    "t-dropdown-item": "tdesign-miniprogram/dropdown-menu/dropdown-item",
+    "t-dropdown-menu": "tdesign-miniprogram/dropdown-menu/dropdown-menu",
+    "t-grid": "tdesign-miniprogram/grid/grid",
+    "t-grid-item": "tdesign-miniprogram/grid/grid-item",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-input": "tdesign-miniprogram/input/input",
+    "t-radio": "tdesign-miniprogram/radio/radio",
+    "t-radio-group": "tdesign-miniprogram/radio-group/radio-group",
+    "t-search": "tdesign-miniprogram/search/search",
+    "t-stepper": "tdesign-miniprogram/stepper/stepper",
+    "t-swiper": "tdesign-miniprogram/swiper/swiper",
+    "t-swiper-item": "tdesign-miniprogram/swiper/swiper-item",
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
+    "t-tag": "tdesign-miniprogram/tag/tag",
+    "t-textarea": "tdesign-miniprogram/textarea/textarea"
+  }
 }

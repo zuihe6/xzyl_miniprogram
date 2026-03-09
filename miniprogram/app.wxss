@@ -1,10 +1,21 @@
-/**app.wxss**/
-.container {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 200rpx 0;
-  box-sizing: border-box;
-} 
+page {
+  background: #f5f6fa;
+  color: #222;
+  font-size: 28rpx;
+}
+
+.page {
+  padding: 24rpx;
+  padding-bottom: 140rpx;
+}
+
+.section-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  margin: 24rpx 0;
+}
+
+.price {
+  color: #e34d59;
+  font-weight: 700;
+}

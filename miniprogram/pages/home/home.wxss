@@ -1,0 +1,35 @@
+.location-row {
+  margin: 16rpx 0;
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+}
+
+.brand {
+  color: #1a6b3a;
+  font-weight: 600;
+}
+
+.tag-row {
+  white-space: nowrap;
+  margin: 20rpx 0;
+}
+
+.tag-row t-tag {
+  margin-right: 12rpx;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.more {
+  color: #1a6b3a;
+  font-size: 24rpx;
+}
+
+.tour-list t-card {
+  margin-bottom: 16rpx;
+}
