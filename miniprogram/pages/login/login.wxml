@@ -1,0 +1,11 @@
+<view class="page login-page">
+  <view class="logo">🏔️</view>
+  <view class="welcome">您好，欢迎登录西藏野狼旅行社 App</view>
+  <t-button block theme="primary" bindtap="login">授权手机号快捷登录</t-button>
+  <view class="hint">请完成手机号授权以继续使用</view>
+
+  <view class="agreement">
+    <t-checkbox checked="{{agreed}}" bind:change="onAgreeChange" />
+    <text>我已阅读并同意《林芝新绎旅游开发有限公司会员服务条款》与《个人信息保护政策》</text>
+  </view>
+</view>

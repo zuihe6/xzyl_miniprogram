@@ -1,0 +1,32 @@
+<view class="page">
+  <t-search placeholder="搜索热门路线、景点、目的地" shape="round" />
+
+  <view class="location-row">
+    <text>📍 拉萨</text>
+    <text class="brand">西藏野狼旅行社</text>
+  </view>
+
+  <t-swiper list="{{swiperList}}" height="320rpx" autoplay interval="3500" duration="600" />
+
+  <scroll-view scroll-x class="tag-row">
+    <t-tag theme="warning" variant="light">热门路线</t-tag>
+    <t-tag variant="light">布达拉宫</t-tag>
+    <t-tag variant="light">林芝桃花</t-tag>
+    <t-tag variant="light">雅鲁藏布大峡谷</t-tag>
+    <t-tag variant="light">纳木错</t-tag>
+  </scroll-view>
+
+  <view class="section-title">功能服务</view>
+  <t-grid column="3" bordered="{{false}}">
+    <t-grid-item wx:for="{{modules}}" wx:key="title" text="{{item.title}}" image="icon" icon="{{item.icon}}" bindtap="goModule" data-url="{{item.url}}" />
+  </t-grid>
+
+  <view class="section-head">
+    <view class="section-title">热门参团游</view>
+    <text class="more" bindtap="goGroupTour">查看全部</text>
+  </view>
+
+  <view class="tour-list">
+    <t-card wx:for="{{tours}}" wx:key="name" title="{{item.name}}" description="{{item.tags}}" note="¥{{item.price}} 起/人" />
+  </view>
+</view>

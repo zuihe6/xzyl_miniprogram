@@ -1,0 +1,13 @@
+.city {
+  margin: 24rpx 0 16rpx;
+  color: #666;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+t-card {
+  margin-bottom: 16rpx;
+}

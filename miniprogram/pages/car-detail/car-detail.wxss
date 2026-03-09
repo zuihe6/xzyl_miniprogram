@@ -1,0 +1,36 @@
+.cover {
+  height: 300rpx;
+  border-radius: 16rpx;
+  background: linear-gradient(135deg, #1a6b3a, #43a870);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 90rpx;
+}
+
+.title {
+  margin-top: 20rpx;
+  font-size: 36rpx;
+  font-weight: 700;
+}
+
+.price-row {
+  margin: 16rpx 0 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 20rpx 24rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rpx solid #eee;
+}

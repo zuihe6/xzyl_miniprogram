@@ -1,0 +1,13 @@
+.list {
+  margin-top: 20rpx;
+}
+
+.list t-card {
+  margin-bottom: 16rpx;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

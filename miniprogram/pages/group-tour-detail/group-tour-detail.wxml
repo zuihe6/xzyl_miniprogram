@@ -1,0 +1,28 @@
+<view class="page">
+  <t-card title="【直通车】雅鲁藏布大峡谷一日游（林芝出发）" description="南迦巴瓦峰 · 两江汇流 · 佛掌沙丘" note="¥680 起/人" />
+
+  <view class="section-title">选择出行日期</view>
+  <view class="date-row">
+    <t-tag wx:for="{{['今天 03-05','明天 03-06','后天 03-07','周日 03-10','周一 03-11','更多日期']}}" wx:key="*this" theme="{{item===date?'primary':'default'}}" variant="{{item===date?'dark':'light'}}" bindtap="chooseDate" data-date="{{item}}">{{item}}</t-tag>
+  </view>
+
+  <view class="counter-row">
+    <text>选择数量</text>
+    <t-stepper value="{{count}}" bindchange="onCountChange" />
+  </view>
+
+  <view class="section-title">联系人</view>
+  <t-input label="姓名" required placeholder="请输入姓名" />
+  <t-input label="手机号" required placeholder="请输入手机号" />
+
+  <view class="section-title">产品介绍</view>
+  <t-card description="经典林芝一日路线，纯玩无购物，含正规运营车辆与当地向导服务。" />
+</view>
+
+<view class="bottom-bar">
+  <view>
+    <text>合计：<text class="price">¥{{count * 680}}</text></text>
+    <text class="detail" bindtap="showDetail"> 明细</text>
+  </view>
+  <t-button theme="primary" bindtap="buyNow">立即购买</t-button>
+</view>

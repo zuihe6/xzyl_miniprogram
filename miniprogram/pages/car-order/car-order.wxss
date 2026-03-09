@@ -1,0 +1,22 @@
+t-input,
+t-textarea,
+t-card {
+  margin-bottom: 16rpx;
+}
+
+.bottom-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  padding: 20rpx 24rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rpx solid #eee;
+}
+
+.detail {
+  color: #1a6b3a;
+}
